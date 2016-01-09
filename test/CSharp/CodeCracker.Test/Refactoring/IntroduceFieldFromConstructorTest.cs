@@ -16,11 +16,11 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private int par;
+            private int mPar;
 
             public TypeName(int par)
             {
-               this.par = par;
+               mPar = par;
             }
         }
     }";
@@ -37,11 +37,11 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par;
+            private readonly int mPar;
 
             public TypeName(int par)
             {
-               this.par = par;
+               mPar = par;
             }
         }
     }";
@@ -92,11 +92,11 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par;
+            private readonly int mPar;
 
             public TypeName(int par)
             {
-               this.par = par;
+               mPar = par;
             }
         }
     }";
@@ -130,7 +130,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par;
+            private readonly int mPar;
 
             public TypeName()
             {
@@ -138,7 +138,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
 
             public TypeName(int par)
             {
-               this.par = par;
+               mPar = par;
             }
         }
     }";
@@ -155,7 +155,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par;
+            private readonly int mPar;
 
             public TypeName(int par)
             {
@@ -170,11 +170,11 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par;
+            private readonly int mPar;
 
             public TypeName(int par)
             {
-               this.par = par;
+               mPar = par;
             }
         }
     }";
@@ -191,7 +191,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private string par;
+            private string mPar;
 
             public TypeName(int par)
             {
@@ -205,12 +205,12 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
-            private string par;
+            private readonly int mPar1;
+            private string mPar;
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -227,7 +227,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private event Action par;
+            private event Action mPar;
 
             public TypeName(int par)
             {
@@ -241,13 +241,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            private event Action par;
+            private event Action mPar;
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -264,7 +264,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            interface par { }
+            interface mPar { }
 
             public TypeName(int par)
             {
@@ -278,13 +278,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            interface par { }
+            interface mPar { }
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -301,7 +301,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            delegate void par();
+            delegate void mPar();
 
             public TypeName(int par)
             {
@@ -315,13 +315,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            delegate void par();
+            delegate void mPar();
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -338,7 +338,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            enum par { }
+            enum mPar { }
 
             public TypeName(int par)
             {
@@ -352,13 +352,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            enum par { }
+            enum mPar { }
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -375,7 +375,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            struct par { }
+            struct mPar { }
 
             public TypeName(int par)
             {
@@ -389,13 +389,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            struct par { }
+            struct mPar { }
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -412,7 +412,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            class par { }
+            class mPar { }
 
             public TypeName(int par)
             {
@@ -426,13 +426,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
+            private readonly int mPar1;
 
-            class par { }
+            class mPar { }
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -449,7 +449,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private string bar, par;
+            private string mBar, mPar;
 
             public TypeName(int par)
             {
@@ -463,12 +463,12 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par1;
-            private string bar, par;
+            private readonly int mPar1;
+            private string mBar, mPar;
 
             public TypeName(int par)
             {
-               this.par1 = par;
+               mPar1 = par;
             }
         }
     }";
@@ -485,8 +485,8 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private string par;
-            private string par1;
+            private string mPar;
+            private string mPar1;
 
             public TypeName(int par)
             {
@@ -501,13 +501,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
     {
         class TypeName
         {
-            private readonly int par2;
-            private string par;
-            private string par1;
+            private readonly int mPar2;
+            private string mPar;
+            private string mPar1;
 
             public TypeName(int par)
             {
-               this.par2 = par;
+               mPar2 = par;
             }
         }
     }";
@@ -536,7 +536,7 @@ namespace CodeCracker.Test.CSharp.Refactoring
                 using system;
                 class foo3
                 {
-                    private string bar;
+                    private string mBar;
 
                     public foo3(int bar)
                     {
@@ -556,22 +556,22 @@ namespace CodeCracker.Test.CSharp.Refactoring
                 using System;
                 class foo1
                 {
-                    private readonly int a;
+                    private readonly int mA;
 
                     public foo1(int a)
                     {
-                        this.a = a;
+                        mA = a;
                     }
                 }
                 class foo2
                 {
-                    private readonly int b;
-                    private readonly int a;
+                    private readonly int mB;
+                    private readonly int mA;
 
                     public foo2(int a, int b)
                     {
-                        this.a = a;
-                        this.b = b;
+                        mA = a;
+                        mB = b;
                     }
                 }
 ";
@@ -579,12 +579,12 @@ namespace CodeCracker.Test.CSharp.Refactoring
                 using system;
                 class foo3
                 {
-                    private readonly int bar1;
-                    private string bar;
+                    private readonly int mBar1;
+                    private string mBar;
 
                     public foo3(int bar)
                     {
-                        this.bar1 = bar;
+                        mBar1 = bar;
                     }
                 }
 ";
@@ -593,13 +593,13 @@ namespace CodeCracker.Test.CSharp.Refactoring
                 using system;
                 class foo4
                 {
-                    private readonly string b;
-                    private readonly int a;
+                    private readonly string mB;
+                    private readonly int mA;
 
                     public foo4(int a, string b)
                     {
-                        this.a = a;
-                        this.b = b;
+                        mA = a;
+                        mB = b;
                     }
                 }
     ";

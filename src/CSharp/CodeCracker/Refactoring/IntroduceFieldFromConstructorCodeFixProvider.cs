@@ -10,6 +10,8 @@ using System.Composition;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
+using System.Text;
 
 namespace CodeCracker.CSharp.Refactoring
 {
@@ -44,7 +46,7 @@ namespace CodeCracker.CSharp.Refactoring
         {
             var oldClass = constructorStatement.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             var newClass = oldClass;
-            var fieldName = parameter.Identifier.ValueText;
+            var fieldName = CreateFieldName(parameter.Identifier.ValueText);
             var fieldType = parameter.Type;
             var members = ExtractMembersFromClass(oldClass.Members);
 
@@ -53,14 +55,16 @@ namespace CodeCracker.CSharp.Refactoring
             {
                 var identifierPostFix = 0;
                 while (members.Any(p => p.Key == fieldName))
-                    fieldName = parameter.Identifier.ValueText + ++identifierPostFix;
+                    fieldName = CreateFieldName(parameter.Identifier.ValueText) + ++identifierPostFix;
 
                 addMember = true;
             }
 
-            var assignmentField = SyntaxFactory.ExpressionStatement(SyntaxFactory.AssignmentExpression(SyntaxKind.SimpleAssignmentExpression,
-                                               SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, SyntaxFactory.ThisExpression(),
-                                               SyntaxFactory.IdentifierName(fieldName)), SyntaxFactory.IdentifierName(parameter.Identifier.ValueText)));
+            var assignmentField = SyntaxFactory.ExpressionStatement(
+                SyntaxFactory.AssignmentExpression(
+                    SyntaxKind.SimpleAssignmentExpression,
+                    SyntaxFactory.IdentifierName(fieldName), 
+                    SyntaxFactory.IdentifierName(parameter.Identifier.ValueText)));
             var newConstructor = constructorStatement.WithBody(constructorStatement.Body.AddStatements(assignmentField));
             newClass = newClass.ReplaceNode(constructorStatement, newConstructor);
 
@@ -129,6 +133,17 @@ namespace CodeCracker.CSharp.Refactoring
                 }
             }
             return members;
+        }
+
+        private static string CreateFieldName(string parameterName)
+        {
+            var builder = new StringBuilder(parameterName.Length + 1);
+
+            return builder
+                .Append('m')
+                .Append(Char.ToUpper(parameterName[0]))
+                .Append(parameterName, 1, parameterName.Length - 1)
+                .ToString();
         }
     }
 }
